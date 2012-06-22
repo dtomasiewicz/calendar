@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Calendar</title>
+    <script type="text/javascript" src="ajax.js"></script>
+    <script type="text/javascript" src="util.js"></script>
+    <script type="text/javascript" src="calendar.js"></script>
+    <style type="text/css">
+    /*<![CDATA[*/
+      h1,h2,h3,h4,p { margin-top: 0; }
+      h1 {
+        font-size: 150%;
+        border-bottom: 1px dotted #999;
+        padding-bottom: 20px;
+        margin-bottom: 0;
+      }
+      h2,h3 { margin-bottom: 10px; }
+      button, select { vertical-align: middle; cursor: pointer; margin: 0 5px; }
+      body { background: #f9f9f9; }
+      #container {
+        padding: 20px;
+        width: 800px;
+        border: 1px solid #ccc;
+        margin: 20px auto;
+        background: #fff;
+      }
+      #eventForm {
+        padding: 20px;
+        border: 3px solid #ccc;
+        border-radius: 10px;
+        background: #fff;
+        width: 400px;
+        height: 200px;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        margin: -123px 0 0 -223px;
+      }
+      #events { list-style: none; padding: 0; margin: 0; }
+      #events li { padding: 15px 10px; border-bottom: 1px dotted #999; }
+      #events li:hover { background: #f9f9f9; }
+      #events li button { font-weight: bold; }
+      #events li button:hover { color: #900; }
+      .date { font-size: 75%; color: #999; margin-bottom: 0; }
+      .dateFormat {
+        color: #999;
+        border-bottom: 1px dashed #999;
+        cursor: help;
+        font-style: italic;
+        font-size: 75%;
+      }
+    /*]]>*/
+    </style>
+  </head>
+  <body onload="new Calendar('users', 'events', 'eventForm')">
+    <div id="container">
+      <h1>User:
+        <select id="users">
+          <option value=""></option>
+        </select>
+      </h1>
+      <ul id="events"></ul>
+      <form id="eventForm" style="display: none">
+        <p><label>User <input type="text" name="user"></label></p>
+        <p><label>Name <input type="text" name="name"></label></p>
+        <p><label>Description <input type="text" name="desc"></label></p>
+        <p><label>Date and Time <input type="text" name="date"></label> <span class="dateFormat"
+            title="Although any standardized date/time format should work (eg. 3 Apr 2012 2:24pm)">YYYY-MM-DD</span></p>
+        <p><input type="submit" value="save"></p>
+      </form>
+    </div>
+  </body>
+</html>
